@@ -1,0 +1,15 @@
+require 'minitest/autorun'
+require 'minitest/pride'
+require 'pry'
+require './lib/morse_translator'
+
+#Class TranslatorTest
+  def test
+  morse_translator = MorseTranslator.new
+  assert_equal morse_translator, MorseTranslator.new
+
+end
+
+
+
+binding.pry

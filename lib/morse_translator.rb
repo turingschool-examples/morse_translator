@@ -40,4 +40,9 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def translate
+    morse_translator = MorseTranslator.new
+    morse_translator.translate("hello world")
+  end
+
 end
