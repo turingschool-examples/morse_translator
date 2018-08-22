@@ -42,31 +42,43 @@ class MorseTranslator
   end
 
 
-  def process_unit(array_in)
+  def process_units(array_in)
+    morse_array = []
     array_in.each do |element|
+      # binding.pry
       if element == @dictionary["a"]
-        @dictionary["a"]
-        binding.pry
-      elsif element == "w"
-        @dictionary["w"]
+        morse_array << @dictionary["a"]
+      elsif element == "b"
+        morse_array << @dictionary["b"]
+      elsif element == "c"
+        morse_array << @dictionary["c"]
+      elsif element == "d"
+        morse_array << @dictionary["d"]
+      elsif element == "e"
+        morse_array << @dictionary["e"]
+      elsif element == "f"
+        morse_array << @dictionary["f"]
+      elsif element == "g"
+        morse_array << @dictionary["g"]
+      elsif element == "h"
+        morse_array << @dictionary["h"]
+      elsif element == "i"
+        morse_array << @dictionary["i"]
       else
         "Undefined"
       end
+      return morse_array
+      # binding.pry
     end
   end
 
   def translate(string_in)
     string_in.downcase!
-    binding.pry
     array_of_letters = string_in.split("")
-    binding.pry    
-    morse_array = []
-    binding.pry    
-    morse_unit = process_unit(array_of_letters)
-    binding.pry    
-    morse_array << morse_unit
-    binding.pry    
-    morse_array
+    morse_string_out = "" 
+    process_units(array_of_letters).each do |unit|
+      morse_string_out += unit.to_s
+    end
   end
 
   
