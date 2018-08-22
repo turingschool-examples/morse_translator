@@ -1,5 +1,5 @@
 require './lib/morse_translator'
-
+require 'pry'
 class Message
   attr_reader :text,
               :morse_translator
@@ -7,14 +7,14 @@ class Message
   def initialize(text, morse_translator)
     @text             = text
     @morse_translator = morse_translator
-    @reverse_dictionary = @morse_translator.dictionary.invert
   end
 
   def translation
-    words = @text.split(" ")
-    translated_text = ""
-    @words.each do |word|
-      translated_text << @reverse_dictionary[word]
+    translation = ""
+    @text.each_char do |char|
+      translation << @morse_translator.dictionary[char.downcase]
     end
+    translation
   end
+
 end

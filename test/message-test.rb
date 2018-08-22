@@ -23,7 +23,6 @@ class MessageTest < Minitest::Test
   end
 
   def test_it_can_translate
-    skip
     translator = MorseTranslator.new
     message = Message.new("There are 3 ships", translator)
     assert_equal "-......-.. .-.-.. ...-- ..........--...." , message.translation
