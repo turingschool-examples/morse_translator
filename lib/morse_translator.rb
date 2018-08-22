@@ -40,4 +40,22 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def translate(string)
+    characters = string.chars
+
+    # map returns a new array
+    changed = characters.map do |char|
+      @dictionary[char]
+    end
+
+    translated = changed.join
+    return translated # a string
+    # TO DO  --- break into char array method
+  end
+
+
+
+
+
+
 end
