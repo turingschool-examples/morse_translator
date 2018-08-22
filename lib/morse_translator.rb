@@ -84,7 +84,7 @@ class MorseTranslator
   end
 
     def translate(input)
-     input.downcase.chars.map do |letter|
+     input.downcase.chars.each do |letter|
      @joined_morse_code <<  @dictionary[letter]
     end
      @joined_morse_code.join
