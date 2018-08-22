@@ -41,6 +41,10 @@ class MorseTranslator
   end
 
   def translate(text)
-
+    @dictionary.each_pair do |key, value|
+      if key == key
+        value
+      end
+    end
   end
 end
