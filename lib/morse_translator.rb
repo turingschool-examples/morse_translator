@@ -43,10 +43,8 @@ class MorseTranslator
 
   def translate(string)
     translate_this = string.chars
-    translate_this.map {|letter| @dictionary[letter]}.join
+    translate_this.map {|letter| @dictionary[letter.downcase]}.join
   end
-
-
 
 
 end
