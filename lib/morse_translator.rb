@@ -1,5 +1,5 @@
 class MorseTranslator
-
+attr_reader :dictionary, :translate, :morse_code_string
   def initialize
     @dictionary = {"a" => ".-",
                     "b" => "-...",
