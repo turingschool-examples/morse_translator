@@ -9,4 +9,9 @@ class MessageTest <Minitest::Test
     message = Message.new("There are 3 ships", morse_translator)
     assert_instance_of Message, message
   end
-end 
+  def test_it_can_translate_string
+    morse_translator = MorseTranslator.new
+    message = Message.new("There are 3 ships", morse_translator)
+    assert_equal "-......-.. .-.-.. ...-- ..........--....", message.translation
+  end 
+end

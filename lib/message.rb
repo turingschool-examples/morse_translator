@@ -1,6 +1,7 @@
 class Message
   attr_reader :text,
-              :translation
+              :translation,
+              :morse_translator
   def initialize (string,morse_translator)
     @text = string
     @morse_translator = morse_translator
@@ -9,4 +10,4 @@ class Message
   def translation
     morse_translator.translate(@text)
   end
-end 
+end
