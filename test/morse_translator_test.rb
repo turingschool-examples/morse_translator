@@ -29,7 +29,21 @@ class MorseTranslatorTest < Minitest::Test
     morse_translator = MorseTranslator.new
 
     expected = "......-...-..--- .-----.-..-..-.."
-    assert_equal expected, morse_translator.translate
+    assert_equal expected, morse_translator.translate('hello world')
   end
-  
+
+  def test_translation_works_again
+    morse_translator = MorseTranslator.new
+
+    expected = ".....-.--."
+    assert_equal expected, morse_translator.translate('sup')
+  end
+
+  def test_capitalization_works
+    morse_translator = MorseTranslator.new
+
+    expected = "......-...-..--- .-----.-..-..-.."
+    assert_equal expected, morse_translator.translate('Hello World')
+  end
+
 end

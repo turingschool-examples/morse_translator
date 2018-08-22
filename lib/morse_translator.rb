@@ -1,5 +1,3 @@
-require 'pry'
-
 class MorseTranslator
   attr_accessor :dictionary
 
@@ -52,7 +50,7 @@ class MorseTranslator
   end
 
   def find_morse_code_words(message)
-      letters = message.chars
+      letters = message.downcase.chars
       letters.map do |letter|
         find_morse_code_letter(letter)
       end
@@ -62,9 +60,8 @@ class MorseTranslator
     dictionary.find do |letter|
       if letter[0] == character
       return letter[1]
-    end
+      end
     end
   end
-
 
 end
