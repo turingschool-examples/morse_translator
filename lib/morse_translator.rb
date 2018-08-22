@@ -1,3 +1,4 @@
+require "pry"
 class MorseTranslator
 
   def initialize
@@ -39,5 +40,17 @@ class MorseTranslator
                     "0" => "-----",
                     " " => " "}
   end
+
+  def translate(words)
+    letters = words.split("")
+    morse =letters.map do |letter|
+      @dictionary[letter]
+    end
+    morse.join
+  end
+
+  
+
+
 
 end
