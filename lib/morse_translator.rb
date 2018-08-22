@@ -1,6 +1,8 @@
 class MorseTranslator
+  attr_reader   :dictionary,
+                :translate
 
-  def initialize
+  def initialize(translate)
     @dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
@@ -38,6 +40,7 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+    @translate = translate
   end
 
 end
