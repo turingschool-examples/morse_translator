@@ -1,3 +1,5 @@
+# morse_translator
+
 class MorseTranslator
 
   def initialize
@@ -38,6 +40,11 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+
+  def translate
+
+
   end
 
 end
