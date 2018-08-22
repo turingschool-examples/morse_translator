@@ -2,11 +2,15 @@ require 'pry'
 require './lib/morse_translator'
 
 class Message
-  attr_reader :string,
-              :morse_translator
+  attr_reader :text,
+              :translator
 
-  def initialize(string, morse_translator)
-    @string = string
-    @morse_translator = morse_translator
+  def initialize(text, translator)
+    @text = text
+    @translator = translator
+  end
+
+  def translation
+    translator.translate(text)
   end
 end
