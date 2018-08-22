@@ -1,3 +1,5 @@
+# morse_translator
+
 class MorseTranslator
 
   def initialize
@@ -38,6 +40,14 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+
+  def translate(message)
+    translated = []
+    message.chars.each do |character|
+      translated << @dictionary[character]
+    end
+    translated.join
   end
 
 end
