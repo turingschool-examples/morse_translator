@@ -9,9 +9,22 @@ class MorseTranslatorTest < Minitest::Test
     assert_instance_of MorseTranslator, morse
   end
 
-  def test_translating_lower_case_words_works
+  def test_camn_translate_lower_case_words
     morse = MorseTranslator.new
-    assert_equal "hello world", morse.translate("hello world")
+    expected = "......-...-..--- .-----.-..-..-.."
+    assert_equal expected, morse.translate("hello world")
+  end
+
+  def test_can_translate_upper_case
+    morse = MorseTranslator.new
+    expected = "......-...-..--- .-----.-..-..-.."
+    assert_equal expected, morse.translate("Hello World")
+  end
+
+  def test_can_translate_numbers
+    morse = MorseTranslator.new
+    expected = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, morse.translate("There are 3 ships")
   end
 
 end

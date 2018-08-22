@@ -44,9 +44,10 @@ class MorseTranslator
 
   def translate(string)
     morse_code = ""
-    string.each do |letter|
-      morse_code + @dictionary[]
+    string.downcase.split("").each do |letter|
+      morse_code << @dictionary[letter]
     end
+    return morse_code
   end
 
 end
