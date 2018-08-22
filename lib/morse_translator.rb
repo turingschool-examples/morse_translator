@@ -45,6 +45,7 @@ class MorseTranslator
   end
 
   def translate(string)
+    string = string.downcase
     array = string.split("")
     containor = []
     array.each do |index|

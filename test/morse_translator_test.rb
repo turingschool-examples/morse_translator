@@ -15,6 +15,15 @@ class MorseTranslatorTest < Minitest::Test
   def test_translate
     morse_translator = MorseTranslator.new
 
+    actual = morse_translator.translate("There are 3 ships")
+
+    assert_equal "-......-.. .-.-.. ...-- ..........--....", actual
+
+  end
+
+  def test_translate
+    morse_translator = MorseTranslator.new
+
     actual = morse_translator.translate("cat")
 
     assert_equal "-.-..--", actual
