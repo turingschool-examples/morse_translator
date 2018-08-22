@@ -15,18 +15,25 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal expected, morse
   end
 
-  def test_translate_string_with_uppercase
+  def test_translates_string_with_uppercase
     morse_translator = MorseTranslator.new
     morse = morse_translator.translate("Hello World")
     expected = "......-...-..--- .-----.-..-..-.."
     assert_equal expected, morse
   end
 
-  def test_translate_string_with_numbers
+  def test_translates_string_with_numbers
     # skip
     morse_translator = MorseTranslator.new
     morse = morse_translator.translate("There are 3 ships")
     expected = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal expected, morse
+  end
+
+  def test_translates_morse_to_eng
+    morse_translator = MorseTranslator.new
+    morse = ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."
+    english = morse_translator.morse_to_eng(morse)
+    assert_equal "hello world", english
   end
 end
