@@ -10,7 +10,7 @@ class Message
   end
 
   def translation
-    text_array = text.downcase.chars
+    translator.translate(text)
   end
 
 end
