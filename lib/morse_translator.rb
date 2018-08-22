@@ -40,4 +40,10 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def translate(letter)
+      @dictionary.each_key do |letter|
+        @dictionary[:letter]
+    end
+  end
+
 end
