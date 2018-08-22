@@ -19,9 +19,15 @@ class MorseTranslatorTest < Minitest::Test
   
   def test_it_can_translate_upper_case
     morse_translator = MorseTranslator.new
-    morse_translator.create_upper_case_keys
     expected = "......-...-..--- .-----.-..-..-.."
 
     assert_equal expected, morse_translator.translate("Hello World")
   end
+
+  def test_it_translates_upper_lower_and_numbers
+    morse_translator = MorseTranslator.new
+    expected = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, morse_translator.translate("There are 3 ships")
+  end
+
 end
