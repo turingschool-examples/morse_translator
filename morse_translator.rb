@@ -40,11 +40,16 @@ class MorseTranslator
                     " " => " "}
   end
 
-  def translate(text)
-    @dictionary.each_pair do |key, value|
-      if key == key
-        value
+  def match_text(text)
+    array_text = text.split('')
+     array_text.map do |char|
+      if @dictionary.include?(char)
+        @dictionary[char]
       end
     end
+  end
+
+  def translate(text)
+    match_text(text).join
   end
 end

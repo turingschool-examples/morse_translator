@@ -12,6 +12,6 @@ class MorseTranslatorTest < Minitest::Test
   def test_that_the_translate_method_translates_to_morse_code
     morse = MorseTranslator.new
     expected = morse.translate("hello world")
-    assert_equal ".....-...-..--- .-----.-..-..-..", expected
+    assert_equal "......-...-..--- .-----.-..-..-..", expected
   end
 end
