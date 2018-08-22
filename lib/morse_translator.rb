@@ -43,7 +43,7 @@ class MorseTranslator
   def translate(text)
     characters = text.chars
     morse_chars_array = characters.map do |character|
-      @dictionary[character]
+      @dictionary[character.downcase]
     end
     morse_chars_array.join
   end
