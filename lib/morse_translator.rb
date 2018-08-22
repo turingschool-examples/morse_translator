@@ -41,7 +41,7 @@ class MorseTranslator
   end
 
   def translate(english)
-    english.split("").map { |letter| @dictionary[letter]}.join
+    english.downcase.split("").map { |letter| @dictionary[letter]}.join
   end
 
 end
