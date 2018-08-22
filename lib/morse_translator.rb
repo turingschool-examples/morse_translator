@@ -40,19 +40,20 @@ class MorseTranslator
                     " " => " "}
   end
 
-  def translate(string)
-    characters = string.chars
 
-    # map returns a new array
+  def translate(string)
+    converted = convert_case(string)
+    encrypted = encrypt(converted)
+    return encrypted
+  end
+
+  def encrypt(string)
+    characters = string.chars
     changed = characters.map do |char|
       @dictionary[char]
     end
-
     translated = changed.join
-    return translated # a string
-    # TO DO  --- break into char array method
-    # TO DO  --- rename this method, create boss method named translate()
-    # TO DO  --- link methods (translate does not currently receive downcase string)
+    return translated
   end
 
   def convert_case(string)
