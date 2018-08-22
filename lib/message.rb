@@ -1,5 +1,7 @@
 # message
 
+require 'pry'
+
 class Message
   attr_reader :text,
               :translator
