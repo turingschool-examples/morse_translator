@@ -51,7 +51,14 @@ class MorseTranslator
     translated = changed.join
     return translated # a string
     # TO DO  --- break into char array method
+    # TO DO  --- rename this method, create boss method named translate()
   end
+
+  def convert_case(string)
+    string.downcase
+  end
+
+  def
 
 
 
