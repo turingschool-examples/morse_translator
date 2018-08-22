@@ -13,7 +13,7 @@
 
 Morse Code translates a character into a sequence of dots and dashes. For example, morse code translates the letter "a" to ".-". Your job is to write a program that can translate English words to Morse Code.
 
-For this Activity, you will be adding to the provided `MorseTranslator` class. You can make any changes to the class you like. For your convenience, the `MorseTranslator` class includes a Hash with the translations of English characters, numbers, and spaces to Morse Code.
+For this Activity, you will be adding to the provided `MorseTranslator` class. You can make any changes to the class you like. For your convenience, the `MorseTranslator` class includes a **Hash** with the translations of English characters, numbers, and spaces to Morse Code.
 
 You should be using Test Driven Development when completing the following iterations.
 
@@ -21,7 +21,7 @@ You should be committing code every 20 minutes.
 
 ### Iteration 1
 
-Use TDD to add a method to the `MorseTranslator` class called `translate` that takes a String as an argument and returns a String of the translation to morse code. For this iteration, the `translate` method only needs to handle lower case letters and spaces.
+Use TDD to add a method to the `MorseTranslator` class called `translate` that takes a String as an argument and returns a String of the translation to morse code. For this iteration, the `translate` method only needs to handle **lower case letters and spaces**.
 
 A `MorseTranslator` should respond to the following interaction pattern:
 
