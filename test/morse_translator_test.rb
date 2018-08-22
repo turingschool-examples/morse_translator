@@ -29,5 +29,20 @@ class MorseTranslatorTest < Minitest::Test
     expected = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal expected, actual
   end
+
+  def test_it_translates_one_morse_code_character_into_english
+    morse_translator = MorseTranslator.new
+    actual = morse_translator.morse_char_to_eng_char("--...")
+    expected = "7"
+    assert_equal expected, actual
+  end
+  
+  def test_it_translates_morse_code_string_into_english
+    morse_translator = MorseTranslator.new
+    morse_string = ".--. . .- -.-. ."
+    actual = morse_translator.morse_to_eng(morse_string)
+    expected = "peace"
+    assert_equal expected, actual
+  end
   
 end
