@@ -41,7 +41,12 @@ class MorseTranslator
                     " " => " "}
   end
 
-def translate(message)
-end
+  def translate(message)
+    translate = ""
+    message.each_char do |strings|
+      translate += dictionary[strings]
+    end
+    translate
+  end
 
 end
