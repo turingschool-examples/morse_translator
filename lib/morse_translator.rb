@@ -42,7 +42,7 @@ class MorseTranslator
                     " " => " "}
   end
 
-  def translate
+  def translate(message)
 
 
   end
