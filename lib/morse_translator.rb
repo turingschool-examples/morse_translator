@@ -40,4 +40,9 @@ class MorseTranslator
                     " " => " "}
   end
 
+
+  def translate(string_in)
+    string_in.downcase!
+  end
+
 end
