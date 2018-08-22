@@ -1,3 +1,5 @@
+require 'pry'
+
 class MorseTranslator
 
   def initialize
@@ -40,4 +42,11 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def translate(words)
+    new_words = ""
+    words.each_char do |letter|
+      new_words << @dictionary[letter]
+    end
+    new_words
+  end
 end
