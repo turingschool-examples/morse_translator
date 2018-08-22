@@ -38,6 +38,17 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+    @morse_code_string = []
   end
+
+  def translate(word)
+    downcase = word.downcase
+    array_of_strings = downcase.each_char.to_a
+    array_of_strings.each do |letter|
+      @morse_code_string << @dictionary[letter]
+    end
+    return @morse_code_string.join
+  end
+
 
 end
