@@ -40,11 +40,11 @@ class MorseTranslator
                     " " => " "}
 
     @joined_morse_code = []
-    
+
   end
 
     def translate(input)
-     input.chars.map do |letter|
+     input.downcase.chars.map do |letter|
      @joined_morse_code <<  @dictionary[letter]
     end
      @joined_morse_code.join

@@ -26,4 +26,8 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "......-...-..--- .-----.-..-..-..", @mt.translate("hello world")
   end
 
+  def test_it_can_translate_an_uppercase_letter
+    assert_equal ".-", @mt.translate("A")
+  end
+
 end
