@@ -3,7 +3,7 @@ class MorseTranslator
                 :translate
 
   def initialize(translate)
-    @dictionary = {"a" => ".-",
+    @dictionary = { "a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
                     "d" => "-..",
@@ -40,12 +40,10 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
-                  end
-                end
-
-
-    def translate
-      translate[:a]
-    end
+      
+  end
+  def translate
+    translate[:a]
+  end
 
 end

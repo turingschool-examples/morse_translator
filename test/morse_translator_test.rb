@@ -9,7 +9,6 @@ class MorseTransTest < Minitest::Test
   end
 
   def test_morse_translate_check
-    skip
     morse_translator = MorseTranslator.new("hello world")
 
     assert_equal translate, morse_translator.translate("hello world")
