@@ -56,6 +56,19 @@ class MorseTranslator
     end
     string_array.join("")
   end
+
+  def morse_to_eng(string)
+    string_array = []
+    holder = string.chars
+    holder.each do |char|
+      dictionary.each do |key,val|
+        if val == char
+          string_array << key
+        end
+      end
+    end
+    string_array.join("")
+  end
 end
 
 
@@ -98,3 +111,4 @@ morse_translator = MorseTranslator.new({"a" => ".-",
                 " " => " "})
 
 p morse_translator.translate("hello world")
+p morse_translator.translate(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
