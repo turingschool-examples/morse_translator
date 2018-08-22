@@ -43,8 +43,9 @@ class MorseTranslator
   end
 
   def translate(words)
+    downcase = words.downcase
     new_words = ""
-    words.each_char do |letter|
+    downcase.each_char do |letter|
       new_words << @dictionary[letter]
     end
     new_words
