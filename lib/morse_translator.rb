@@ -49,11 +49,18 @@ class MorseTranslator
     return translation_array.join("")
   end
 
-  def morse_char_to_eng_char(morse_string)
-    key_value_pair = @dictionary.find do |char|
-      char.last == morse_string
+  def morse_char_to_eng_char(morse_char)
+    eng_morse_pair = @dictionary.find do |char|
+      char.last == morse_char
     end
-    return key_value_pair.first
+    return eng_morse_pair.first
+  end
+
+  def morse_to_eng(morse_string)
+    translated_array = morse_string.split(" ").map do |char|
+      morse_char_to_eng_char(char)
+    end
+    return translated_array.join("")
   end
 
 end
