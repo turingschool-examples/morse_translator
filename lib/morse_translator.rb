@@ -38,16 +38,17 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+
   end
 
 
   def process_unit(array_in)
     array_in.each do |element|
-      if element == "a"
-        @dictionary[:a]
+      if element == @dictionary["a"]
+        @dictionary["a"]
+        binding.pry
       elsif element == "w"
-        @dictionary[:w]
-
+        @dictionary["w"]
       else
         "Undefined"
       end
@@ -56,10 +57,18 @@ class MorseTranslator
 
   def translate(string_in)
     string_in.downcase!
-    array_of_letters = string_in.split("")
-    process_unit(array_of_letters)
     binding.pry
-
+    array_of_letters = string_in.split("")
+    binding.pry    
+    morse_array = []
+    binding.pry    
+    morse_unit = process_unit(array_of_letters)
+    binding.pry    
+    morse_array << morse_unit
+    binding.pry    
+    morse_array
   end
+
+  
 
 end
