@@ -83,6 +83,12 @@ class MorseTranslator
     end.flatten.join
   end
 
-
+  def morse_to_eng(morse_message)
+    inverted_dictionary = @dictionary.invert
+    morse_message.split(" ").map do |element|
+      inverted_dictionary.values_at(element)
+ 
+    end.flatten.join
+  end
 
 end
