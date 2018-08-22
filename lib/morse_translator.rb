@@ -44,7 +44,7 @@ class MorseTranslator
   def translate(message)
     translate = ""
     message.each_char do |strings|
-      translate += dictionary[strings]
+      translate += dictionary[strings.downcase]
     end
     translate
   end

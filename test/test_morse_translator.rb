@@ -10,6 +10,7 @@ class MorseTranslatorTest < Minitest::Test
 
   def test_it_if_has_attrubutes
     morse_translator = MorseTranslator.new
+
     assert_equal dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
@@ -52,7 +53,17 @@ class MorseTranslatorTest < Minitest::Test
 
   def test_it_if_can_translate
       morse_translator = MorseTranslator.new
+
       assert_equal "......-...-..--- .-----.-..-..-..",
       morse_translator.translate("hello world")
+  end
+
+  def test_it_if_can_translate_upcase_letters
+      morse_translator = MorseTranslator.new
+
+      assert_equal "......-...-..--- .-----.-..-..-..",
+      morse_translator.translate("Hello world")
+      assert_equal "-......-.. .-.-.. ...-- ..........--...." , 
+      morse_translator.translate("There are 3 ships")
   end
 end
