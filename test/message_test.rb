@@ -25,14 +25,12 @@ class MessageTest < Minitest::Test
     #i seriously can't believe this may have just worked
     message = Message.new("ab", @mt)
     assert_equal ".--...", message.translation
-    binding.pry
   end
 
   def test_it_translates_a_long_mixed_sentence
     message = Message.new("There are 3 ships", @mt)
     translated_message = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal translated_message, message.translation
-    binding.pry
   end
 
 end

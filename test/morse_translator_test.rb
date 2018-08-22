@@ -19,7 +19,7 @@ class MorseTranslatorTest < Minitest::Test
   end
 
   def test_it_can_translate_multiple_letters_passed_in_one_string
-    binding.pry
+    # binding.pry
     assert_equal ".--...", @mt.translate("ab")
   end
 
@@ -42,6 +42,18 @@ class MorseTranslatorTest < Minitest::Test
   def test_it_can_translate_a_mixed_input
     morse_output = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal morse_output, @mt.translate("There are 3 ships")
+  end
+
+  def test_it_can_translate_one_morse_symbol_to_a_letter
+    assert_equal "a", @mt.morse_to_eng(".-")
+  end
+
+  def test_it_translates_a_morse_symbol_and_number
+    assert_equal "a0", @mt.morse_to_eng(".- -----")
+  end
+
+  def test_it_translates_spaces_too
+    assert_equal "a 0", @mt.morse_to_eng(".- / -----")
   end
 
 end

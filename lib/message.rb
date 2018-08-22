@@ -9,7 +9,8 @@ class Message
   end
 
   def translation
-    #for some reason, this is printing the message out twice. whyyyy...
+    #something tells me its becuase i need to call the actual hash name
+    #somewhere in here, but every time i do that, it errors out
     @translator.translate(@text)
 
   end

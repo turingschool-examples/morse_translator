@@ -1,5 +1,7 @@
 class MorseTranslator
 
+  attr_reader :dictionary
+
   def initialize
     @dictionary = {"a" => ".-",
                     "b" => "-...",
@@ -39,7 +41,47 @@ class MorseTranslator
                     "0" => "-----",
                     " " => " "}
 
+                    @morse_to_english = {
+                    ".-" => "a",
+                    "-..." => "b",
+                    "-.-." => "c",
+                    "-.." => "d",
+                    "." => "e",
+                    "..-." => "f",
+                    "--." => "g",
+  	                "...." => "h",
+  	                ".." => "i",
+  	                ".---" => "j",
+  	                "-.-" => "k",
+  	                ".-.." => "l",
+  	                "--" => "m",
+  	                "-." => "n",
+                   	"---" => "o",
+  	                ".--." => "p",
+  	                "--.-" => "q",
+  	                ".-." => "r",
+  	                "..." => "s",
+  	                "-" => "t",
+  	                "..-" => "u",
+  	                "...-" => "v",
+  	                ".--" => "w",
+  	                "-..-" => "x",
+  	                "-.--" => "y",
+  	                "--.." => "z",
+  	                "/" => " ",
+  	                ".----" => "1",
+  	                "..---" => "2",
+  	                "...--" => "3",
+  	                "....-" => "4",
+  	                "....." => "5",
+  	                "-...." => "6",
+  	                "--..." => "7",
+  	                "---.." => "8",
+  	                "----." => "9",
+  	                "-----" => "0"}
+
     @joined_morse_code = []
+    @joined_english_code = []
 
   end
 
@@ -48,6 +90,13 @@ class MorseTranslator
      @joined_morse_code <<  @dictionary[letter]
     end
      @joined_morse_code.join
+    end
+
+    def morse_to_eng(code)
+      code.split(" ").map do |code|
+        @joined_english_code << @morse_to_english[code]
+      end
+      @joined_english_code.join
     end
 
 end
