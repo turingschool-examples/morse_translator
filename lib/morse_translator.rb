@@ -52,22 +52,23 @@ class MorseTranslator
     morse_array.join{""}
   end
 
-  def morse_to_eng(morse_code)
+
+  def number_of_words(morse_code)
     morse_code_array = morse_code.split("  ")
     counter = morse_code_array.length
-    loop do
-      counter.times do |x|
-        morse_code_array[x]
-        counter -= 1
+    return morse_code_array
+  end
+
+  def morse_to_eng(morse_code)
+    morse_word_array = morse_code.split("  ")
+    num_of_words = morse_word_array.length
+    final = morse_word_array.map do |word|
+      word = word.split(" ")
+      translation = word.map do |code|
+      dictionary.key("#{code}")
       end
-    break if counter == 0
-    return
     end
-    if morse_code_array.length > 1
-      word = morse_code_array.slice(0, 1)
-    else
-    end
-    binding.pry
+    final
   end
 
 end
