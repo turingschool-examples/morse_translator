@@ -40,8 +40,8 @@ class MorseTranslator
                     " " => " "}
   end
 
-  def translate(str)
-    char_arr = str.chars
+  def translate(text)
+    char_arr = text.chars
     encoded = char_arr.map do |char|
       @dictionary[char.downcase]
     end
@@ -49,6 +49,15 @@ class MorseTranslator
     encoded.join
   end
 
+  def morse_to_eng(text)
+    reverse_dictionary = @dictionary.invert
 
+    char_arr = text.split(" ")
+    decoded = char_arr.map do |char|
+      reverse_dictionary[char]
+    end
+
+    decoded.join
+  end
 
 end
