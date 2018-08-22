@@ -50,4 +50,23 @@ class MorseTranslator
     return morse_code
   end
 
+  def morse_to_eng(morse_code)
+    string = ""
+    morse_code.split("  ").each do |code|
+      word = ""
+      if code == morse_code.split("  ").last
+        code.split.each do |letter|
+          word << @dictionary.key(letter)
+        end
+        string << word
+      else
+        code.split.each do |letter|
+          word << @dictionary.key(letter)
+        end
+        string << word + " "
+      end
+    end
+    return string
+  end
+
 end
