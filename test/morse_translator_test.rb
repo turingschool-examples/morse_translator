@@ -29,6 +29,4 @@ class MorseTranslatorTest < Minitest::Test
 
     assert_equal "hello world", morse_translator.morse_to_eng(".... . .-.. .-.. --- .-- --- .-. .-.. -..")
   end
-
-
 end

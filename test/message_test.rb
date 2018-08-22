@@ -23,12 +23,14 @@ class MessageTest < Minitest::Test
   def test_message_can_receive_text
     morse_translator = MorseTranslator.new
     message = Message.new("There are 3 ships", morse_translator)
+
     assert_equal "There are 3 ships", message.text
   end
 
   def test_message_has_morse_translator
     morse_translator = MorseTranslator.new
     message = Message.new("There are 3 ships", morse_translator)
+
     assert_equal morse_translator, message.translator
   end
 

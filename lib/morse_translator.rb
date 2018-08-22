@@ -56,7 +56,6 @@ class MorseTranslator
      reverse_dictionary[char]
    end
    eng_array.insert(5, " ").join
-
   end
 
   def reverse_dictionary
