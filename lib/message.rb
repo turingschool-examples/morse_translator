@@ -1,4 +1,3 @@
-require 'pry'
 class Message
   attr_reader :input,
               :translator
@@ -8,7 +7,6 @@ class Message
   end
 
   def translation
-
-  binding.pry
+    translator.translate(input)
   end
 end
