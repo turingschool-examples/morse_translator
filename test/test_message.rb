@@ -11,11 +11,18 @@ class MessageTest < Minitest::Test
   end
 
   def test_if_it_has_attributes
-    morse = MorseTranslator.new
-    code = Message.new("There are 3 ships", morse)
+    morse_translator = MorseTranslator.new
+    message = Message.new("There are 3 ships", morse_translator)
 
-    assert_equal "There are 3 ships", code.text
-    assert_equal morse, code.translator
+    assert_equal "There are 3 ships", message.text
+    assert_equal morse_translator, message.translator
 
+  end
+  def test_if_it_can_translate
+    morse_translator = MorseTranslator.new
+    message = Message.new("There are 3 ships", morse_translator)
+
+    assert_equal "-......-.. .-.-.. ...-- ..........--....",
+    message.translation
   end
 end

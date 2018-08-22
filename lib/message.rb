@@ -10,4 +10,7 @@ class Message
     @translator = translator
   end
 
+  def translation
+    translator.translate(text)
+  end
 end
