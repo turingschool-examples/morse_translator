@@ -62,20 +62,42 @@ class MorseTranslator
     string.downcase
   end
 
+  # #######################################
+
   def morse_to_eng(encrypted)
-    digits = encrypted.split(" ")
+    formatted = manage_message_spaces(encrypted)
     # binding.pry
+    letters = english_letters(formatted)
+    # binding.pry
+    return letters
+  end
+
+  ## # takes a string
+  # takes an array
+  def english_letters(formatted)
+    # formatted.compact
+    letttters = formatted.slice(nil)
+    binding.pry
+    # letttters is an array of multi-dig letters
+
+    # WAS REWORKING THIS
+
+    # formatted: ".... . .-.. .-.. --- .-- --- .-. .-.. -.."
+    digits = formatted.split(" ")
+    # digits = formatted.chars
+    binding.pry
     values = @dictionary.values
-    # binding.pry
+
     eng_letters = digits.map do |dig|
-      letter = reverse_lookup(dig)
+      letter = reverse_lookup(dig) + " "
+
     end
     english = eng_letters.join
-    binding.pry
+    # binding.pry
     return english
   end
 
-
+  # takes a letter (string size 1)
   def reverse_lookup(letter_encryption)
     keys = @dictionary.keys
     values = @dictionary.values
@@ -84,8 +106,9 @@ class MorseTranslator
     # binding.pry
   end
 
-
+  # takes a string  (STEP 1)
   def manage_message_spaces(string)
+    # JUST SLICE AT nil  ---> .compact?
     chars = string.chars
     index = 0
     altered = []
@@ -98,8 +121,10 @@ class MorseTranslator
         index += 1
       end
     end
-    binding.pry
-    return altered
+    # binding.pry
+    return altered #.compact.join
+    # DO NOT COMPACT HERE
+    # do .join for message with space
   end
 
 

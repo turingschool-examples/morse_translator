@@ -35,7 +35,10 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "hello world", actual
   end
 
+  # #####################################################
+
   def test_it_can_convert_to_english
+    skip
     morse = MorseTranslator.new
     actual = morse.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
     assert_equal "helloworld", actual
@@ -44,6 +47,7 @@ class MorseTranslatorTest < Minitest::Test
   end
 
   def test_it_can_manage_spaces_in_message
+    skip
     morse = MorseTranslator.new
     string = "Hello  world"
     try_me = morse.manage_message_spaces(string)
@@ -59,8 +63,14 @@ class MorseTranslatorTest < Minitest::Test
     string = "Hello  world"
     try_me = morse.manage_message_spaces(string)
     arr = ["H", "e", "l", "l", "o", nil, " ", "w", "o", "r", "l", "d"]
-
-
   end
+
+  def test_it_can_translate_morse_to_english
+    morse = MorseTranslator.new
+    string = ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."
+    actual = morse.morse_to_eng(string)
+    assert_equal "hello world", actual
+  end
+
 
 end
