@@ -30,4 +30,17 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal ".-", @mt.translate("A")
   end
 
+  def test_it_can_translate_multiple_uppecase_letters
+    assert_equal ".--...", @mt.translate("AB")
+  end
+
+  def test_it_can_tranlsate_uppercase_and_numbers
+    assert_equal ".------", @mt.translate("A0")
+  end
+
+  def test_it_can_translate_a_mixed_input
+    morse_output = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal morse_output, @mt.translate("There are 3 ships")
+  end
+
 end
