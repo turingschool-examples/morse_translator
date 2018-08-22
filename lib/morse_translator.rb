@@ -51,4 +51,14 @@ class MorseTranslator
     end
     morse_array.join{""}
   end
+
+  def morse_to_eng(morse_code)
+    morse_code_array = morse_code.split
+    eng_array = morse_code_array.map do |code|
+      dictionary.key(code)
+    end
+    eng_array.join("")
+    binding.pry
+  end
+
 end
