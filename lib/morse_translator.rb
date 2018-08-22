@@ -49,7 +49,10 @@ class MorseTranslator
   end
 
   def split_message(message)
-    message.split("")
+    letters = message.split("")
+    letters.map do |letter|
+      letter.downcase
+    end 
   end
 
   def use_dictionary(letters)
