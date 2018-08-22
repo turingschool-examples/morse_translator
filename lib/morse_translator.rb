@@ -1,6 +1,7 @@
 require 'pry'
 
 class MorseTranslator
+  attr_reader :dictionary
 
   def initialize
     @dictionary = {"a" => ".-",
