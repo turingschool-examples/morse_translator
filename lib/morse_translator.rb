@@ -46,5 +46,11 @@ class MorseTranslator
     translate_this.map {|letter| @dictionary[letter.downcase]}.join
   end
 
+  def morse_to_eng(morse)
+    decode_this = morse.split
+    reverse = @dictionary.invert
+    decode_this.map {|character| reverse[character]}
+  end
+
 
 end

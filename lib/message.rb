@@ -10,7 +10,6 @@ class Message
   end
 
   def translation
-    translate_it = @text.chars
-    @morse_translator.translate(translate_it)
+    @morse_translator.translate(@text)
   end
 end
