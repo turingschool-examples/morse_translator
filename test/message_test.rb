@@ -30,5 +30,5 @@ class MessageTest < Minitest::Test
 
   end
 
-
+  
 end

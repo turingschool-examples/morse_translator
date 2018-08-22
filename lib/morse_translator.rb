@@ -54,10 +54,27 @@ class MorseTranslator
     containor.join("")
   end
 
+  def morse_to_eng(string)
+    # string = string.downcase
+    words = string.split("  ")
 
+    containor = []
+    words.each do |word|
+
+      array2 =word.split" "
+
+      array2.each do |index|
+        containor << @dictionary.key(index)
+
+      end
+      containor << " "
+
+    end
+
+    containor.pop
+    containor.join("")
+    
+
+  end
 
 end
-
-
-# morse_translator = MorseTranslator.new
-# binding.pry
