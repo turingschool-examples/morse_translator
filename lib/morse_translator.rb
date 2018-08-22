@@ -53,11 +53,20 @@ class MorseTranslator
   end
 
   def morse_to_eng(morse_code)
-    morse_code_array = morse_code.split
-    eng_array = morse_code_array.map do |code|
-      dictionary.key(code)
+    morse_code_array = morse_code.split("  ")
+    counter = morse_code_array.length
+    loop do
+      counter.times do |x|
+        morse_code_array[x]
+        counter -= 1
+      end
+    break if counter == 0
+    return
     end
-    eng_array.join("")
+    if morse_code_array.length > 1
+      word = morse_code_array.slice(0, 1)
+    else
+    end
     binding.pry
   end
 
