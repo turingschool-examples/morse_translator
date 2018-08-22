@@ -40,7 +40,12 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
-    @translate = translate
-  end
+                  end
+                end
+
+
+    def translate
+      translate[:a]
+    end
 
 end

@@ -3,15 +3,14 @@ require 'minitest/autorun'
 require 'minitest/pride'
 
 class MorseTransTest < Minitest::Test
-  def instance_of_morse_translator
+  def test_it_exists
     morse_translator = MorseTranslator.new
-
     assert_instance_of MorseTranslator, morse_translator
   end
 
-  def morse_tranlate_check
+  def test_morse_translate_check
     skip
-    morse_translator = MorseTranslator.new
+    morse_translator = MorseTranslator.new("hello world")
 
     assert_equal translate, morse_translator.translate("hello world")
   end
