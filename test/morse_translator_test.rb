@@ -56,14 +56,13 @@ class MorseTranslatorTest < Minitest::Test
   def test_change_one_code_to_english_letter
     morse_translator = MorseTranslator.new
 
-    assert_equal "x", morse_translator.letter_from_morse("-..-")
+    assert_equal "x", morse_translator.find_letter_from_morse("-..-")
   end
 
   def test_change_coded_words_to_english_words
-    skip
     morse_translator = MorseTranslator.new
 
-    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], morse_translator.letter_from_morse("-..-")
+    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], morse_translator.word_from_morse(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
   end
 
   def test_morse_back_to_english

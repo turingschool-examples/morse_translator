@@ -57,15 +57,15 @@ class MorseTranslator
   end
 
   def find_morse_code_letter(character)
-    character.split(" ")
     dictionary.find do |letter|
       if letter[0] == character
       return letter[1]
       end
     end
   end
+  #######
 
-  def letter_from_morse(dots)
+  def find_letter_from_morse(dots)
     dictionary.find do |letter|
       if letter[1] == dots
         return letter[0]
@@ -73,7 +73,21 @@ class MorseTranslator
     end
   end
 
-  def morse_to_eng(code)
+#still working on functionality to handle spacing
+  def word_from_morse(characters)
+    messages = characters.split(" ")
+    messages.map do |message|
+          find_letter_from_morse(message)
+    end
+  end
+
+  #still working on functionality to handle spacing
+  def morse_to_eng(message)
+    translation = ""
+    word_from_morse(message).each do |code|
+      translation += code
+    end
+    return translation
   end
 
 end
