@@ -50,18 +50,20 @@ attr_reader :dictionary,
     downcase = word.downcase
     array_of_strings = downcase.each_char.to_a
     array_of_strings.each do |letter|
-      @morse_code_array << @dictionary[letter]
+      @morse_code_string_array << @dictionary[letter]
     end
     return @morse_code_string_array.join
   end
 
   def morse_to_eng(morse_code_string)
-    array_of_code = morse_code_string.split
-    array_of_code.each do |code|
-      @english_array << @dictionary.key(code)
-    end
+    i = 0
+    array_of_code = morse_code_string.split(" ")
+    while array_of_code.length > 0
+      array_of_code[i].each do |code|
+        @english_array << @dictionary.key(code)
+      end
+      i += 1 
     return @english_array.join
   end
-  binding.pry
 
 end
