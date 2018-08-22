@@ -42,14 +42,15 @@ class MorseTranslator
   end
 
   def translate(words)
-    letters = words.split("")
+    downcased = words.downcase
+    letters = downcased.split("")
     morse =letters.map do |letter|
       @dictionary[letter]
     end
     morse.join
   end
 
-  
+
 
 
 
