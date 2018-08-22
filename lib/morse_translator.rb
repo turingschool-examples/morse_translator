@@ -42,6 +42,7 @@ class MorseTranslator
   end
 
   def translate(english)
-    in_string = english.downcase.split
+    in_string = english.downcase.chars
+    p in_string
   end
 end
