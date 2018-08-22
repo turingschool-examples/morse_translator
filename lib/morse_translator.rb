@@ -38,6 +38,8 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+                  # # Handling spaces in encrypted message (iteration 4)
+                  # "!" => "! "}
   end
 
 
@@ -59,4 +61,47 @@ class MorseTranslator
   def convert_case(string)
     string.downcase
   end
+
+  def morse_to_eng(encrypted)
+    digits = encrypted.split(" ")
+    # binding.pry
+    values = @dictionary.values
+    # binding.pry
+    eng_letters = digits.map do |dig|
+      letter = reverse_lookup(dig)
+    end
+    english = eng_letters.join
+    binding.pry
+    return english
+  end
+
+
+  def reverse_lookup(letter_encryption)
+    keys = @dictionary.keys
+    values = @dictionary.values
+    index = values.index(letter_encryption)
+    eng_letter = keys[index]
+    # binding.pry
+  end
+
+
+  def manage_message_spaces(string)
+    chars = string.chars
+    index = 0
+    altered = []
+    while index < chars.size
+      if chars[index] == " " && chars[index+1] == " "
+        altered << chars[index] = nil
+        index += 1
+      else
+        altered << chars[index]
+        index += 1
+      end
+    end
+    binding.pry
+    return altered
+  end
+
+
+
 end

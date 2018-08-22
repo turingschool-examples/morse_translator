@@ -35,5 +35,32 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "hello world", actual
   end
 
+  def test_it_can_convert_to_english
+    morse = MorseTranslator.new
+    actual = morse.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
+    assert_equal "helloworld", actual
+    # HOW to KEEP SPACES that are Spaces
+    # Above is not what would be output by translator!!
+  end
+
+  def test_it_can_manage_spaces_in_message
+    morse = MorseTranslator.new
+    string = "Hello  world"
+    try_me = morse.manage_message_spaces(string)
+    expected = ["H", "e", "l", "l", "o", nil, " ", "w", "o", "r", "l", "d"]
+    assert_equal expected, try_me
+  end
+
+  # this and test_it_can_convert_to_english need to be renamed and refactored
+  # intended to do different things
+  def test_it_can_reverse_convert
+    skip
+    morse = MorseTranslator.new
+    string = "Hello  world"
+    try_me = morse.manage_message_spaces(string)
+    arr = ["H", "e", "l", "l", "o", nil, " ", "w", "o", "r", "l", "d"]
+
+
+  end
 
 end
