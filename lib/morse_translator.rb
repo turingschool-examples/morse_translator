@@ -1,3 +1,4 @@
+require 'pry'
 class MorseTranslator
 attr_reader :dictionary,
             :translate,
@@ -42,6 +43,7 @@ attr_reader :dictionary,
                     "0" => "-----",
                     " " => " "}
     @morse_code_string_array = []
+    @english_array = []
   end
 
   def translate(word)
@@ -54,7 +56,12 @@ attr_reader :dictionary,
   end
 
   def morse_to_eng(morse_code_string)
-    morse_code_string.split
+    array_of_code = morse_code_string.split
+    array_of_code.each do |code|
+      @english_array << @dictionary.key(code)
+    end
+    return @english_array.join
   end
+  binding.pry
 
 end
