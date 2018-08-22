@@ -1,4 +1,5 @@
 # morse_translator
+require 'pry'
 
 class MorseTranslator
 
@@ -56,6 +57,7 @@ class MorseTranslator
       untranslated << @dictionary.key(value)
     end
     untranslated.join
+    binding.pry
   end
 
 end
