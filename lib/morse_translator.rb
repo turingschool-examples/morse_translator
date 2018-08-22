@@ -1,6 +1,8 @@
 class MorseTranslator
+  attr_reader :string
 
   def initialize
+    @translated_string = []
     @dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
@@ -38,6 +40,13 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+
+  def translate(string)
+    string.split("").each do |letter|
+      @translated_string << @dictionary.values_at(letter)
+    end
+    @translated_string
   end
 
 end
