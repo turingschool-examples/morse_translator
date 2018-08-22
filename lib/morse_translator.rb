@@ -1,6 +1,9 @@
 class MorseTranslator
 
-  def initialize
+  attr_reader :diccionary,
+
+
+  def initialize (diccionary)
     @dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
@@ -39,5 +42,11 @@ class MorseTranslator
                     "0" => "-----",
                     " " => " "}
   end
+
+   def translate(hash) 
+    @diccionary.map{|k,v| "#{k}=#{v}"}.join('&')
+
+  end
+
 
 end
