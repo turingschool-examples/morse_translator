@@ -14,4 +14,10 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "......-...-..--- .-----.-..-..-.." , translator.translate("hello world")
   end
 
+  def test_ignores_case
+    translator = MorseTranslator.new
+    assert_equal "......-...-..--- .-----.-..-..-.." , translator.translate("Hello World")
+    assert_equal "......-...-..--- .-----.-..-..-.." , translator.translate("HelLo WoRLd")
+  end
+
 end
