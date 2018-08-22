@@ -43,6 +43,10 @@ class MorseTranslator
 
   def translate(english)
     in_string = english.downcase.chars
-    p in_string
+    out_string = []
+    in_string.map do |letter|
+      out_string << dictionary["#{letter}"]
+    end
+    out_string.join
   end
 end

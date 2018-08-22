@@ -12,7 +12,7 @@ class MorseTranslatorTest < Minitest::Test
   def test_splits_string
     morse_translator = MorseTranslator.new
     actual = morse_translator.translate("hello world")
-    expected = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+    expected = "......-...-..--- .-----.-..-..-.."
     assert_equal expected, actual
   end
 
