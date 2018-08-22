@@ -33,4 +33,10 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "hello world", actual
   end
 
+  def test_code_to_word
+    morse_translator = MorseTranslator.new
+    actual = morse_translator.code_to_word(".... . .-.. .-.. ---")
+    assert_equal "hello", actual
+  end
+
 end

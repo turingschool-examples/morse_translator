@@ -53,20 +53,21 @@ class MorseTranslator
   def morse_to_eng(morse_code)
     string = ""
     morse_code.split("  ").each do |code|
-      word = ""
       if code == morse_code.split("  ").last
-        code.split.each do |letter|
-          word << @dictionary.key(letter)
-        end
-        string << word
+        string << code_to_word(code)
       else
-        code.split.each do |letter|
-          word << @dictionary.key(letter)
-        end
-        string << word + " "
+        string << code_to_word(code) + " "
       end
     end
     return string
+  end
+
+  def code_to_word(code)
+    word = ""
+    code.split.each do |letter|
+      word << @dictionary.key(letter)
+    end
+    return word
   end
 
 end
