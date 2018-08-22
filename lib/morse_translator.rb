@@ -40,4 +40,12 @@ class MorseTranslator
                     " " => " "}
   end
 
+   def translate("hello world")
+
+    @dictionary["hello world"]
+
+    end
+
+
+   end
 end
