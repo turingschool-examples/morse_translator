@@ -50,4 +50,10 @@ class MorseTranslator
     @translated_string.join
   end
 
+  def morse_to_eng(string)
+    string.split(" ").each do |morse|
+      @translated_string << @dictionary.key(morse)
+    end
+    @translated_string.join("")
+  end
 end
