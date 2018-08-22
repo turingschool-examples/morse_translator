@@ -30,6 +30,6 @@ class MessageTest < Minitest::Test
       message = Message.new("sup", morse_translator)
       expected = ".....-.--."
       assert_equal expected, message.translation
-    end
+  end
 
 end
