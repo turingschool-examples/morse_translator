@@ -46,7 +46,7 @@ class MorseTranslator
     string.split("").each do |letter|
       @translated_string << @dictionary.values_at(letter)
     end
-    @translated_string
+    @translated_string.join
   end
 
 end
