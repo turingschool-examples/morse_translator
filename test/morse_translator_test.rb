@@ -27,7 +27,6 @@ class MorseTranslatorTest < Minitest::Test
   end
 
   def test_translate_works
-    skip
     morse_translator = MorseTranslator.new
 
     expected = "......-...-..--- .-----.-..-..-.."
