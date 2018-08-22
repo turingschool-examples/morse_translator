@@ -19,7 +19,10 @@ class MorseTranslatorTest < Minitest::Test
     b = "-..."
     c = "-.-."
     d = "-.."
+    string_2 = "There are 3 ships"
     assert_equal b + c + d, morse.translate(string)
+    assert_equal "-......-.. .-.-.. ...-- ..........--....", morse.translate(string_2)
+    assert_equal "......-...-..--- .-----.-..-..-..", morse.translate("Hello World")
   end
 
 end
