@@ -13,12 +13,18 @@ class MorseTranslatorTest < Minitest::Test
         assert_instance_of MorseTranslator, morse
     end
 
-    def test_it_can_process_text
+    def test_it_can_process_letters
         morse = MorseTranslator.new
         # binding.pry
-        # assert_equal "....", morse.translate("h")
-        assert_equal "......", morse.translate("hi")
+        assert_equal "....", morse.translate("h")
+        
     end 
+
+    def test_it_can_process_sentence
+        morse = MorseTranslator.new
+        assert_equal "-......-.. .-.-.. ...-- ..........--....", morse.translate("There are 3 ships")
+    end 
+
 end
 
 
