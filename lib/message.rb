@@ -10,8 +10,8 @@ class Message
   end
 
   def translation
-
-
+    morse_translator = MorseTranslator.new
+    morse_translator.translate(@text)
   end
 
 end
