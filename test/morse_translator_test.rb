@@ -24,4 +24,11 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "-......-.. .-.-.. ...-- ..........--....", morse_translator.translate("There are 3 ships")
   end
 
+  def test_it_can_translate_morse_back_to_english
+    morse_translator = MorseTranslator.new
+
+    assert_equal "hello world", morse_translator.morse_to_eng(".... . .-.. .-.. --- .-- --- .-. .-.. -..")
+  end
+
+
 end

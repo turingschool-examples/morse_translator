@@ -4,7 +4,6 @@ class Message
   def initialize(text, translator)
     @text = text
     @translator = translator
-    # @morse_translator = MorseTranslator.new
   end
 
   def translation
