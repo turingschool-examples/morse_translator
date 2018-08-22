@@ -50,6 +50,7 @@ class MorseTranslator
   end
 
   def translate(text)
+    text.downcase!
     match_text(text).join
   end
 end

@@ -14,4 +14,18 @@ class MorseTranslatorTest < Minitest::Test
     expected = morse.translate("hello world")
     assert_equal "......-...-..--- .-----.-..-..-..", expected
   end
+
+  def test_that_the_translate_method_translates_upercase_letters_as_well
+    morse_translator = MorseTranslator.new
+    actual = morse_translator.translate("Hello World")
+    expected = "......-...-..--- .-----.-..-..-.."
+    assert_equal expected, actual
+  end
+
+  def test_that_the_translate_method_translates_upercase_letters_and_numbers
+    morse_translator = MorseTranslator.new
+    actual = morse_translator.translate("There are 3 ships")
+    expected = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, actual
+  end
 end
