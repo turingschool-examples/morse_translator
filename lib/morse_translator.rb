@@ -1,6 +1,7 @@
 class MorseTranslator
 
   def initialize
+
     @dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
@@ -38,10 +39,6 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
-  end
-
-  def translate(string)
-
   end
 
 end
