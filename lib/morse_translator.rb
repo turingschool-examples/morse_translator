@@ -1,5 +1,8 @@
 class MorseTranslator
-attr_reader :dictionary, :translate, :morse_code_string,:morse_to_eng
+attr_reader :dictionary,
+            :translate,
+            :morse_code_string,
+            :morse_to_eng
   def initialize
     @dictionary = {"a" => ".-",
                     "b" => "-...",
@@ -38,17 +41,20 @@ attr_reader :dictionary, :translate, :morse_code_string,:morse_to_eng
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
-    @morse_code_string = []
+    @morse_code_string_array = []
   end
 
   def translate(word)
     downcase = word.downcase
     array_of_strings = downcase.each_char.to_a
     array_of_strings.each do |letter|
-      @morse_code_string << @dictionary[letter]
+      @morse_code_array << @dictionary[letter]
     end
-    return @morse_code_string.join
+    return @morse_code_string_array.join
   end
 
+  def morse_to_eng(morse_code_string)
+    morse_code_string.split
+  end
 
 end
