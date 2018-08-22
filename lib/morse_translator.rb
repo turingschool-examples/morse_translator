@@ -40,4 +40,11 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def translate(str)
+    char_arr = str.chars
+    encoded = char_arr.map do |char
+
+
+  end
+
 end
