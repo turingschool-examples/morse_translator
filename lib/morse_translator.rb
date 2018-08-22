@@ -1,3 +1,4 @@
+require 'pry'
 class MorseTranslator
 
   def initialize
@@ -42,6 +43,8 @@ class MorseTranslator
 
   def translate(string)
     
-  end
+
+
+
 
 end
