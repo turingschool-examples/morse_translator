@@ -44,7 +44,7 @@ class MorseTranslator
 
   def translate(message)
     translated = []
-    message.chars.each do |character|
+    message.downcase.chars.each do |character|
       translated << @dictionary[character]
     end
     translated.join
