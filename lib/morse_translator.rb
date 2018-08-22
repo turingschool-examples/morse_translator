@@ -55,7 +55,7 @@ class MorseTranslator
     morse_msg.split(" ").each do |value|
       untranslated << @dictionary.key(value)
     end
-    untranslated
+    untranslated.join
   end
 
 end
