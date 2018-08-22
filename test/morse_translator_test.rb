@@ -18,7 +18,12 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal(expected, actual)
   end
 
-
+  def test_it_can_translate_uppercase
+    morse_translator = MorseTranslator.new
+    expected = "......-...-..--- .-----.-..-..-.."
+    actual = morse_translator.translate("Hello World")
+    assert_equal(expected, actual)
+  end
 
 
 
