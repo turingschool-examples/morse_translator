@@ -8,6 +8,7 @@ class MessageTest < Minitest::Test
 
   def test_new_instance_of_morse_translator_is_created
     morse_translator = MorseTranslator.new
+    
     assert_instance_of MorseTranslator, morse_translator
   end
 

@@ -60,6 +60,7 @@ class MorseTranslatorTest < Minitest::Test
   end
 
   def test_change_coded_words_to_english_words
+    skip
     morse_translator = MorseTranslator.new
 
     assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], morse_translator.word_from_morse(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
