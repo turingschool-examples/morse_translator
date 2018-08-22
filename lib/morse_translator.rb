@@ -1,4 +1,3 @@
-require "pry"
 class MorseTranslator
 
   def initialize
@@ -49,9 +48,4 @@ class MorseTranslator
     end
     morse.join
   end
-
-
-
-
-
 end
