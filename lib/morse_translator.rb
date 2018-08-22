@@ -1,4 +1,5 @@
 # morse_translator
+require 'pry'
 
 class MorseTranslator
 
@@ -48,6 +49,15 @@ class MorseTranslator
       translated << @dictionary[character]
     end
     translated.join
+  end
+
+  def morse_to_eng(morse_msg)
+    untranslated = []
+    morse_msg.split(" ").each do |value|
+      untranslated << @dictionary.key(value)
+    end
+    untranslated.join
+    binding.pry
   end
 
 end
