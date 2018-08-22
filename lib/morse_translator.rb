@@ -1,7 +1,5 @@
 class MorseTranslator
 
-  attr_reader :dictionary
-
   def initialize
     @dictionary = {"a" => ".-",
                     "b" => "-...",
@@ -41,7 +39,7 @@ class MorseTranslator
                     "0" => "-----",
                     " " => " "}
 
-                    @morse_to_english = {
+    @morse_to_english = {
                     ".-" => "a",
                     "-..." => "b",
                     "-.-." => "c",
@@ -80,8 +78,8 @@ class MorseTranslator
   	                "----." => "9",
   	                "-----" => "0"}
 
-    @joined_morse_code = []
-    @joined_english_code = []
+      @joined_morse_code = []
+      @joined_english_code = []
 
   end
 
@@ -93,10 +91,10 @@ class MorseTranslator
     end
 
     def morse_to_eng(code)
-      code.split(" ").map do |code|
-        @joined_english_code << @morse_to_english[code]
-      end
-      @joined_english_code.join
+     code.split(" ").map do |code|
+     @joined_english_code << @morse_to_english[code]
+    end
+     @joined_english_code.join
     end
 
 end

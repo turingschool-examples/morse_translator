@@ -1,7 +1,6 @@
 class Message
 
-  attr_reader :text,
-              :translator
+  attr_reader :text
 
   def initialize(text, translator)
     @text = text
@@ -9,10 +8,7 @@ class Message
   end
 
   def translation
-    #something tells me its becuase i need to call the actual hash name
-    #somewhere in here, but every time i do that, it errors out
     @translator.translate(@text)
-
   end
 
 end

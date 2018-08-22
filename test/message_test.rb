@@ -22,7 +22,6 @@ class MessageTest < Minitest::Test
   end
 
   def test_it_can_tranlsate_multiple_letters
-    #i seriously can't believe this may have just worked
     message = Message.new("ab", @mt)
     assert_equal ".--...", message.translation
   end
