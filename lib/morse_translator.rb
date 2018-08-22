@@ -43,19 +43,25 @@ class MorseTranslator
   end
 
   def translate(message)
-    split_message
+    split = split_message(message)
+    code = use_dictionary(split)
+    code.join(",")
   end
 
   def split_message(message)
-      message.split("")
+    message.split("")
   end
 
-  def use_dictionary(split_message)
-    split_message.map do |letter|
-      if letter == dictionary.key
-        dictionary.value
-      end
+  def use_dictionary(letters)
+    letters.map do |letter|
+    if letter == @dictionary.key
+      return @dictionary.value
     end
   end
+end
+
+
+
+
 binding.pry
 end

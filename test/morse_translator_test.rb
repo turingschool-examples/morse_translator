@@ -18,6 +18,14 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_can_use_dictionary
+    morse_translator = MorseTranslator.new
+
+    expected = ["....", ".", ".-..", ".-..", "---"," ", ".--", "---", ".-.", ".-..", "-.."]
+    actual = morse_translator.use_dictionary(["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d",])
+    assert_equal expected, actual
+  end
+
   def test_translate_works
     skip
     morse_translator = MorseTranslator.new
