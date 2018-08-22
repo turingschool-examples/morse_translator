@@ -52,17 +52,10 @@ class MorseTranslator
     return translated # a string
     # TO DO  --- break into char array method
     # TO DO  --- rename this method, create boss method named translate()
+    # TO DO  --- link methods (translate does not currently receive downcase string)
   end
 
   def convert_case(string)
     string.downcase
   end
-
-  def
-
-
-
-
-
-
 end
