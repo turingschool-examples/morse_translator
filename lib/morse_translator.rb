@@ -1,3 +1,5 @@
+require 'pry'
+
 class MorseTranslator
 
   def initialize
@@ -39,5 +41,22 @@ class MorseTranslator
                     "0" => "-----",
                     " " => " "}
   end
+
+  def create_upper_case_keys
+    @dictionary.keys.map do |element|
+      @dictionary[keys] << element.upcase
+      binding.pry
+
+    end
+  end
+
+  def translate(input)
+    input_array = input.chars
+    input_array.map do |keys|
+      @dictionary.values_at(keys)
+    end.flatten.join
+  end
+
+
 
 end
