@@ -1,4 +1,3 @@
-require 'pry'
 class MorseTranslator
 attr_reader :dictionary,
             :translate,
@@ -56,14 +55,17 @@ attr_reader :dictionary,
   end
 
   def morse_to_eng(morse_code_string)
-    i = 0
-    array_of_code = morse_code_string.split(" ")
-    while array_of_code.length > 0
-      array_of_code[i].each do |code|
-        @english_array << @dictionary.key(code)
-      end
-      i += 1 
-    return @english_array.join
+    space_index = morse_code_string.index(' ')
+    index = space_index + 1
+    array_of_code = morse_code_string.split
+    array_of_code.each do |code|
+      @english_array << @dictionary.key(code)
+    end
+    final_array = @english_array.insert(index ," ")
+
+    return final_array.join
   end
+
+
 
 end
