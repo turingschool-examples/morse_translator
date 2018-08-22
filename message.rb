@@ -8,6 +8,6 @@ class Message
   end
 
   def translation
-    morse_translator(text)
+    morse_translator(@text)
   end
 end
