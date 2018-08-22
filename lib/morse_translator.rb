@@ -51,4 +51,15 @@ class MorseTranslator
     end
     new_words
   end
+
+  def morse_to_eng(morse)
+      morse_chars = morse.split(" ")
+      reverse_dictionary = @dictionary.invert
+      english = ""
+      morse_chars.each do |sequence|
+        english << reverse_dictionary[sequence]
+      end
+      english
+  end
+
 end
