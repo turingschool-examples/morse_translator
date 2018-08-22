@@ -1,4 +1,8 @@
+require 'pry'
+
 class MorseTranslator
+
+  attr_reader :dictionary
 
   def initialize
     @dictionary = {"a" => ".-",
@@ -40,4 +44,18 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def translate(string)
+    array = string.char
+    array.each do |index|
+      p index
+    end
+
+  end
+
+
+
 end
+
+
+morse_translator = MorseTranslator.new
+binding.pry
