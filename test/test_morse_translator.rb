@@ -1,8 +1,17 @@
-class MorseTranslator
-  attr_reader :dictionary
+require 'minitest/autorun'
+require 'minitest/pride'
+require './lib/morse_translator.rb'
 
-  def initialize
-    @dictionary = {"a" => ".-",
+class MorseTranslatorTest < Minitest::Test
+  def test_it_if_exits
+    morse_translator = MorseTranslator.new
+    assert_instance_of MorseTranslator, morse_translator
+  end
+
+  def test_it_if_has_attrubutes
+    morse_translator = MorseTranslator.new
+
+    assert_equal dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
                     "d" => "-..",
@@ -38,24 +47,29 @@ class MorseTranslator
                     "8" => "---..",
                     "9" => "----.",
                     "0" => "-----",
-                    " " => " "}
+                    " " => " "},
+     morse_translator.dictionary
   end
 
-  def translate(message)
-    translate = ""
-    message.each_char do |strings|
-      translate += dictionary[strings.downcase]
-    end
-    translate
+  def test_it_if_can_translate
+      morse_translator = MorseTranslator.new
+
+      assert_equal "......-...-..--- .-----.-..-..-..",
+      morse_translator.translate("hello world")
   end
 
-  def morse_to_eng(message)
-    translate = ""
-    words = message.split(' ')
-    words.each do |word|
-      translate += dictionary.key(word)
-    end
-    translate
-  end
+  def test_it_if_can_translate_upcase_letters
+      morse_translator = MorseTranslator.new
 
+      assert_equal "......-...-..--- .-----.-..-..-..",
+      morse_translator.translate("Hello world")
+      assert_equal "-......-.. .-.-.. ...-- ..........--...." ,
+      morse_translator.translate("There are 3 ships")
+  end
+  def test_it_if_can_translate_to_english
+      morse_translator = MorseTranslator.new
+
+      assert_equal "hello world" ,
+      morse_translator.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
+  end
 end
