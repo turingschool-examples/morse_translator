@@ -44,4 +44,15 @@ class MorseTranslator
     english.downcase.split("").map { |letter| @dictionary[letter]}.join
   end
 
+  def morse_to_eng(morse_message)
+    english_array = morse_message.split("  ").map do |morse_word|
+      english_word = morse_word.split.map do |morse_character|
+        @dictionary.find{|key, value| value == morse_character}[0]
+      end
+      english_word << " "
+    end
+    english_array.flatten.join.strip
+  end
+
+
 end
