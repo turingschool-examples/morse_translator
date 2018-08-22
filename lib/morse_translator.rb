@@ -49,4 +49,6 @@ class MorseTranslator
     encoded.join
   end
 
+
+
 end
