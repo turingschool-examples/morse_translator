@@ -44,7 +44,8 @@ class MorseTranslator
 
   def translate(string)
     string.split("").each do |letter|
-      @translated_string << @dictionary.values_at(letter)
+      low_case_letter = letter.downcase
+      @translated_string << @dictionary.values_at(low_case_letter)
     end
     @translated_string.join
   end
