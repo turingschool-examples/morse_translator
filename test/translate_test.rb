@@ -4,7 +4,7 @@ require './lib/morse_translator'
 
 class MorseTranslatorTest < Minitest::Test
 
-  def test_class_is_made
+  def test_morse_class_is_made
     morse_translator = MorseTranslator.new
     assert_instance_of MorseTranslator, morse_translator
   end
