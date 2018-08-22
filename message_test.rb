@@ -10,8 +10,16 @@ class MessageTest < Minitest::Test
   end
 
   def test_that_the_message_class_exists
-    MorseTranslator.new
-    skip
+    morse_translator = MorseTranslator.new
     message = Message.new("There are 3 ships", morse_translator)
+    assert_instance_of Message, message
+  end
+
+  def test_that_the_translate_method_translates_text_to_morse
+    morse_translator = MorseTranslator.new
+    message = Message.new("There are 3 ships", morse_translator)
+    message.translation
+    expected = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, actual
   end
 end
