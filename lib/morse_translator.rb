@@ -40,4 +40,14 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def turns_into_chars(word)
+    word.chars
+  end
+
+  def turns_chars_into_morse(word_array)
+    word_array.map do |letter|
+      @dictionary[letter]
+    end
+  end
+
 end
