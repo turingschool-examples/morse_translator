@@ -17,6 +17,7 @@ class MorseTranslatorTest < Minitest::Test
         morse = MorseTranslator.new
         morse.translate("Hello World").downcase!
         assert_equal "hello world", morse.translate("Hello World")
+        
     end 
 end
 
