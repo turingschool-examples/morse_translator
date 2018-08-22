@@ -1,3 +1,4 @@
+require "pry"
 class MorseTranslator
 
   def initialize
@@ -47,5 +48,16 @@ class MorseTranslator
       @dictionary[letter]
     end
     morse.join
+  end
+
+  def morse_to_eng(morse_words)
+    swapped_dictionary = @dictionary.invert
+
+    morse_letters = morse_words.split(/ /)
+    binding.pry
+    english = morse_letters.map do |letter|
+      swapped_dictionary[letter]
+    end
+    english.join
   end
 end
