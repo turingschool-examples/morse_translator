@@ -40,4 +40,12 @@ class MorseTranslator
                     " " => " "}
   end
 
+  def into_chars(word)
+    word.chars
+  end
+
+  def translate(string)
+    @dictionary("string")
+  end
+
 end
