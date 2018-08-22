@@ -40,12 +40,11 @@ class MorseTranslator
                     " " => " "}
   end
 
-   def translate("hello world")
-
-    @dictionary["hello world"]
-
+   def translate() binding.pry
+    @diccionary.map { |x,y| "%#{hello world}" }.join("_")
+  end
     end
 
 
-   end
+
 end
