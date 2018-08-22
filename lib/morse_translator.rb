@@ -49,4 +49,13 @@ class MorseTranslator
     translate
   end
 
+  def morse_to_eng(message)
+    translate = ""
+    words = message.split(' ')
+    words.each do |word|
+      translate += dictionary.key(word)
+    end
+    translate
+  end
+
 end
