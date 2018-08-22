@@ -26,6 +26,7 @@ class MorseTranslatorTest < Minitest::Test
   end
 
   def test_morse_to_eng
+    skip
     morse_translator = MorseTranslator.new
     morse_code = ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."
     assert_equal "hello world", morse_translator.morse_to_eng(morse_code)
