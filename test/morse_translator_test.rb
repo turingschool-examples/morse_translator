@@ -10,7 +10,16 @@ class MorseTranslatorTest < Minitest::Test
     assert_instance_of MorseTranslator, morse_translator
   end
 
+  def test_translate_can_break_down_message
+    morse_translator = MorseTranslator.new
+
+    expected = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d",]
+    actual = morse_translator.split_message("hello world")
+    assert_equal expected, actual
+  end
+
   def test_translate_works
+    skip
     morse_translator = MorseTranslator.new
 
     expected = "......-...-..--- .-----.-..-..-.."
