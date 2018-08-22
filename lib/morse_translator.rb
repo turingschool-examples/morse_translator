@@ -45,11 +45,12 @@ class MorseTranslator
   end
 
   def translate(string)
-    array = string.char
+    array = string.split("")
+    containor = []
     array.each do |index|
-      p index
+      containor << @dictionary[index]
     end
-
+    containor.join("")
   end
 
 
@@ -57,5 +58,5 @@ class MorseTranslator
 end
 
 
-morse_translator = MorseTranslator.new
-binding.pry
+# morse_translator = MorseTranslator.new
+# binding.pry
