@@ -1,4 +1,7 @@
+require 'pry'
+
 class MorseTranslator
+  attr_reader :dictionary
 
   def initialize
     @dictionary = {"a" => ".-",
@@ -38,6 +41,25 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+
+  def translate(words)
+    downcase = words.downcase
+    new_words = ""
+    downcase.each_char do |letter|
+      new_words << @dictionary[letter]
+    end
+    new_words
+  end
+
+  def morse_to_eng(morse)
+      morse_chars = morse.split(" ")
+      reverse_dictionary = @dictionary.invert
+      english = ""
+      morse_chars.each do |sequence|
+        english << reverse_dictionary[sequence]
+      end
+      english
   end
 
 end
