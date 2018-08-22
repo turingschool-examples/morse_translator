@@ -21,9 +21,15 @@ class MessageTest < Minitest::Test
   def test_new_message_is_translated
     morse_translator = MorseTranslator.new
     message = Message.new("There are 3 ships", morse_translator)
-    binding.pry
     expected = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal expected, message.translation
   end
+
+  def test_another_message_is_translated
+      morse_translator = MorseTranslator.new
+      message = Message.new("sup", morse_translator)
+      expected = ".....-.--."
+      assert_equal expected, message.translation
+    end
 
 end

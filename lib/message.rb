@@ -8,6 +8,6 @@ class Message
   end
 
   def translation
-    message.message
+    @morse_translator.translate(message)
   end
 end
