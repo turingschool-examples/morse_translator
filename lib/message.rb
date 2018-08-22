@@ -9,9 +9,7 @@ class Message
   end
 
   def translation
-    #so in this method i'm taking the text and passing it as the argument into th
-    #morse_tranlsator method called translate. I think i need to call the object of the
-    #morese translator that i called and do stuff to it.
+    #for some reason, this is printing the message out twice. whyyyy...
     @translator.translate(@text)
 
   end

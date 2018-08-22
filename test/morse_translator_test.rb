@@ -19,6 +19,7 @@ class MorseTranslatorTest < Minitest::Test
   end
 
   def test_it_can_translate_multiple_letters_passed_in_one_string
+    binding.pry
     assert_equal ".--...", @mt.translate("ab")
   end
 
