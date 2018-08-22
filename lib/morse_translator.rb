@@ -1,3 +1,4 @@
+require 'pry'
 class MorseTranslator
 
   def initialize
@@ -38,6 +39,9 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+
+    @morse_to_eng_dictionary = @dictionary.invert
+
   end
 
   def translate(input)
@@ -49,6 +53,16 @@ class MorseTranslator
     translate.join
   end
 
+  def morse_to_eng(input)
+    split = input.split(' ')
+    #input_array = input_split.chars
+    translate = []
+      split.map do |character|
+        translate << @morse_to_eng_dictionary[character]
+      end
+      translate.join
+
+  end
 
 
 end
