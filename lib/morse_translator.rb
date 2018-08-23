@@ -48,9 +48,18 @@ class MorseTranslator
     holder << message.chars
     @morse_array = holder.flatten
     @morse_array.each do |char, value|
-      morse << @dictionary[char]
+      morse << @dictionary[char] unless char == char.upcase
+        morse << capitalized_dictionary[char]
     end
     morse.join
+  end
+
+  def capitalized_dictionary
+    cap_dictionary = {}
+    @dictionary.map do |char, value|
+      cap_dictionary[char.upcase] = value
+    end
+    cap_dictionary
   end
 
 end
