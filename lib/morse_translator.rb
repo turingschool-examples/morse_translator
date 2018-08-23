@@ -1,6 +1,7 @@
 class MorseTranslator
 
   def initialize
+    @morse_array = []
     @dictionary = {"a" => ".-",
                     "b" => "-...",
                     "c" => "-.-.",
@@ -38,6 +39,18 @@ class MorseTranslator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+
+  end
+
+  def translate(message)
+    holder = []
+    morse = []
+    holder << message.chars
+    @morse_array = holder.flatten
+    @morse_array.each do |char, value|
+      morse << @dictionary[char]
+    end
+    morse.join
   end
 
 end
