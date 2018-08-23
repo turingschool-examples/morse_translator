@@ -37,4 +37,11 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal expected_2, morse_translator.translate("Hello World")
   end
 
+  def test_the_three_ships
+    morse_translator = MorseTranslator.new
+
+    expected = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, morse_translator.translate("There are 3 ships")
+  end
+
 end
